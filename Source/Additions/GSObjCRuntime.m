@@ -838,6 +838,7 @@ GSProtocolGetMethodDescriptionRecursive(Protocol *aProtocol, SEL aSel, BOOL isRe
               desc = GSProtocolGetMethodDescriptionRecursive(list[i], aSel, isRequired, isInstance);
               if (desc.name != NULL || desc.types != NULL)
                 {
+                  free(list);
                   return desc;
                 }
             }
